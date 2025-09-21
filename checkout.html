@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Asuransi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <h1>Asuransi</h1>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="beli-mobil.html">Mobil</a></li>
+      <li><a href="beli-kesehatan.html">Kesehatan</a></li>
+      <li><a href="beli-jiwa.html">Jiwa</a></li>
+      <li><a href="history.html">Histori</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="form-card">
+      <h2>Checkout</h2>
+      <div id="checkoutInfo" class="hasil"></div>
+      <form id="checkoutForm">
+        <input type="password" id="payPassword" placeholder="Masukkan password akun" required>
+        <button type="submit">Bayar Sekarang</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

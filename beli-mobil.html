@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beli Asuransi Mobil - Asuransi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <h1>Asuransi</h1>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="beli-mobil.html" class="active">Mobil</a></li>
+      <li><a href="beli-kesehatan.html">Kesehatan</a></li>
+      <li><a href="beli-jiwa.html">Jiwa</a></li>
+      <li><a href="history.html">Histori</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="form-card">
+      <h2>Asuransi Mobil</h2>
+      <form id="mobilForm">
+        <input type="text" id="merkMobil" placeholder="Merk Mobil" required>
+        <input type="text" id="jenisMobil" placeholder="Jenis Mobil" required>
+        <input type="number" id="tahunMobil" placeholder="Tahun Pembuatan" required>
+        <input type="number" id="hargaMobil" placeholder="Harga Mobil (Rp)" required>
+        <input type="text" id="platMobil" placeholder="Nomor Plat" required>
+        <input type="text" id="nomorMesin" placeholder="Nomor Mesin" required>
+        <input type="text" id="nomorRangka" placeholder="Nomor Rangka" required>
+        <input type="text" id="namaPemilik" placeholder="Nama Pemilik" required>
+        <button type="submit">Hitung Premi</button>
+      </form>
+      <div id="hasilMobil" class="hasil"></div>
+      <a href="checkout.html" class="btn">Checkout</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

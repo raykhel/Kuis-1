@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beli Asuransi Kesehatan - Asuransi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <h1>Asuransi</h1>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="beli-mobil.html">Mobil</a></li>
+      <li><a href="beli-kesehatan.html" class="active">Kesehatan</a></li>
+      <li><a href="beli-jiwa.html">Jiwa</a></li>
+      <li><a href="history.html">Histori</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="form-card">
+      <h2>Asuransi Kesehatan</h2>
+      <form id="kesehatanForm">
+        <input type="text" id="namaKesehatan" placeholder="Nama Lengkap sesuai KTP" required>
+        <input type="date" id="lahirKesehatan" required>
+        <input type="text" id="pekerjaan" placeholder="Pekerjaan" required>
+        <select id="merokok" required>
+          <option value="">Merokok?</option>
+          <option value="ya">Ya</option>
+          <option value="tidak">Tidak</option>
+        </select>
+        <select id="hipertensi" required>
+          <option value="">Riwayat Hipertensi?</option>
+          <option value="ya">Ya</option>
+          <option value="tidak">Tidak</option>
+        </select>
+        <select id="diabetes" required>
+          <option value="">Riwayat Diabetes?</option>
+          <option value="ya">Ya</option>
+          <option value="tidak">Tidak</option>
+        </select>
+        <button type="submit">Hitung Premi</button>
+      </form>
+      <div id="hasilKesehatan" class="hasil"></div>
+      <a href="checkout.html" class="btn">Checkout</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
