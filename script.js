@@ -1,17 +1,18 @@
+document.addEventListener("DOMContentLoaded", () => {
 // login
 let loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    let email = document.getElementById("loginEmail").value.trim();
-    let pass = document.getElementById("loginPassword").value.trim();
+    let username = document.getElementById("loginUsername").value.trim();
+    let password = document.getElementById("loginPassword").value.trim();
 
-    if (!email || !pass) {
-      alert("Email dan password harus diisi.");
+    if (!username || !password) {
+      alert("Username dan password harus diisi.");
       return;
     }
     let users = JSON.parse(localStorage.getItem("users") || "[]");
-    let user = users.find((u) => u.email === email && u.password === pass);
+    let user = users.find((u) => u.username === username && u.password === password);
 
     if (user) {
       localStorage.setItem("loggedInUser", JSON.stringify(user));
@@ -28,45 +29,25 @@ let signupForm = document.getElementById("signupForm");
 if (signupForm) {
   signupForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    let email = document.getElementById("signupEmail").value.trim();
-    let pass = document.getElementById("signupPassword").value.trim();
-    let confirm = document.getElementById("signupConfirm").value.trim();
-    let nama = document.getElementById("signupName").value.trim();
-    let hp = document.getElementById("signupPhone").value.trim();
+    let username = document.getElementById("signupUsername").value.trim();
+    let password = document.getElementById("signupPassword").value.trim();
 
-    if (!email || !pass || !confirm || !nama || !hp) {
+    if (!username || !password) {
       alert("Semua field wajib diisi.");
       return;
     }
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert("Format email tidak valid.");
-      return;
-    }
-    if (pass.length < 8) {
+    if (password.length < 8) {
       alert("Password minimal 8 karakter.");
-      return;
-    }
-    if (pass !== confirm) {
-      alert("Konfirmasi password tidak sesuai.");
-      return;
-    }
-    if (nama.length < 3 || nama.length > 32 || /\d/.test(nama)) {
-      alert("Nama lengkap tidak valid.");
-      return;
-    }
-    if (!/^08\d{8,14}$/.test(hp)) {
-      alert("Nomor HP tidak valid.");
       return;
     }
 
     let users = JSON.parse(localStorage.getItem("users") || "[]");
-    if (users.find((u) => u.email === email)) {
-      alert("Email sudah terdaftar.");
+    if (users.find((u) => u.username === username)) {
+      alert("User sudah terdaftar.");
       return;
     }
 
-    users.push({ email, password: pass, nama, hp });
+    users.push({ username, password: password});
     localStorage.setItem("users", JSON.stringify(users));
     alert("Registrasi berhasil. Silakan login.");
     window.location.href = "login.html";
@@ -107,6 +88,7 @@ if (mobilForm) {
     );
   });
 }
+});
 
 // beli kesehatan
 let kesehatanForm = document.getElementById("kesehatanForm");
